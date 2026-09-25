@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BARRIO — Places. People. Stories.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <button class="brand" data-go="home" aria-label="Barrio home">
+      <span>BARRIO</span><small>PLACES · PEOPLE · STORIES</small>
+    </button>
+    <nav class="topnav"><a href="#" data-go="city">Customize</a><a href="#" data-go="home">Collections</a><a href="#about">About</a></nav>
+    <div class="topicons"><button aria-label="Search">⌕</button><button aria-label="Bag">◱<b id="bagCount">0</b></button><button class="menu" aria-label="Menu">☰</button></div>
+  </header>
+
+  <main>
+    <section id="home" class="screen active home-screen">
+      <div class="home-hero">
+        <div class="hero-copy">
+          <h1>Wear what<br>moves you.</h1>
+          <p>City-inspired clothing for people<br>who carry places in their hearts.</p>
+          <button class="primary" data-go="city">Shop Now <span>→</span></button>
+          <div class="eyebrow">CITIES LIVE IN US</div>
+          <div class="pager"><i></i><i class="dot active-dot"></i><i class="dot"></i><i class="dot"></i></div>
+        </div>
+        <div class="hero-image"><img src="hero.jpg" alt="Premium BARRIO T-shirt" /></div>
+      </div>
+
+      <div class="quality-strip">
+        <article><img src="detail-1.jpg" alt="Cotton detail"><div><h3>Premium Cotton</h3><p>Exceptionally soft.<br>Made to last.</p></div><em>01</em></article>
+        <article><img src="detail-2.jpg" alt="Embroidered-style print"><div><h3>Iconic Details</h3><p>Real places.<br>Thoughtful design.</p></div><em>02</em></article>
+        <article><img src="detail-3.jpg" alt="Barrio collar"><div><h3>Crafted for Your Journey</h3><p>Every piece is a reminder of where you've been — and where you're going.</p></div><em>03</em></article>
+      </div>
+
+      <section class="stories" id="about">
+        <div class="stories-copy"><div class="eyebrow">THE CITY COLLECTION</div><h2>Places. People. Stories.</h2><p>Wearable memories inspired by real places, diverse cultures and the people who make them special. From familiar streets to faraway horizons, our collections are crafted for those who find home in many places.</p><button class="linkbtn" data-go="city">Explore Collections →</button></div>
+        <div class="story-collage"><div class="scene scene-a"></div><div class="scene scene-b"></div><div class="scene scene-c"></div></div>
+      </section>
+    </section>
+
+    <section id="city" class="screen flow-screen">
+      <div class="stepper" data-step="1"></div>
+      <div class="panel city-panel">
+        <div class="city-art">
+          <div class="city-patch p1">NYC</div><div class="city-patch p2">London</div><div class="city-patch p3">Kolkata</div><div class="city-patch p4">Paris</div><div class="city-patch p5">Mumbai</div>
+        </div>
+        <div class="city-form">
+          <div class="step-label">01 / CITY</div>
+          <h1>Choose your<br>desired city.</h1>
+          <p>Every place has a story. Pick a city that inspires you and customise a T-shirt with its most iconic elements.</p>
+          <div class="searchbox"><span>⌕</span><input id="citySearch" placeholder="Search for a city..." autocomplete="off"></div>
+          <div id="cityList" class="city-list"></div>
+          <button id="cityContinue" class="primary wide" disabled>Continue →</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="shirt" class="screen flow-screen">
+      <div class="stepper" data-step="2"></div>
+      <div class="panel shirt-panel">
+        <div class="shirt-stage">
+          <div class="step-label">02 / T-SHIRT</div>
+          <h1>Choose your base.</h1>
+          <p>A premium canvas for your city story. Timeless, versatile and made to be uniquely yours.</p>
+          <div class="product-stage"><img id="shirtImage" src="tshirt-ivory.png" alt="Premium unisex T-shirt"></div>
+        </div>
+        <aside class="shirt-options">
+          <label>Selected city</label>
+          <button id="selectedCityBtn" class="select-line"></button>
+          <p class="muted">You can change the city later or mix patches from different places.</p>
+          <hr>
+          <h3>Unisex Fit</h3>
+          <p class="muted">A relaxed everyday fit designed for everyone.</p>
+          <h3>Color</h3>
+          <div class="swatches" id="swatches"></div>
+          <div class="size-head"><h3>Size</h3><button id="openSize" class="text-link">Size guide</button></div>
+          <div class="sizes" id="sizes"></div>
+          <div class="facts"><div>☁<span>240 GSM<br>Premium Cotton</span></div><div>≋<span>Soft hand feel</span></div><div>◌<span>Made for<br>high-quality print</span></div></div>
+          <button class="primary wide" data-go="patches">Continue →</button>
+        </aside>
+      </div>
+    </section>
+
+    <section id="patches" class="screen flow-screen">
+      <div class="stepper" data-step="3"></div>
+      <div class="panel patch-panel">
+        <div class="patch-canvas-col">
+          <div class="step-label">03 / PATCHES</div>
+          <h1>Choose your patches.</h1>
+          <p>Drag onto the T-shirt. For this test, one patch is available.</p>
+          <div id="dropZone" class="drop-zone">
+            <img src="tshirt-ivory.png" class="canvas-shirt" alt="T-shirt canvas">
+            <img id="placedPatch" src="patch-chai-bhar.png" alt="Chai bhar patch" class="placed-patch hidden" draggable="false">
+            <div id="patchControls" class="patch-controls hidden"><button id="smaller">−</button><button id="bigger">＋</button><button id="removePatch">⌫</button></div>
+          </div>
+        </div>
+        <aside class="patch-library">
+          <div class="two-selects"><label>Selected city<button id="patchCity" class="select-line small"></button></label><label>Mix another city<button class="select-line small">Add a city⌄</button></label></div>
+          <div class="chips"><button class="chip active">All</button><button class="chip">Food</button><button class="chip">Streets</button><button class="chip">Culture</button><button class="chip">Everyday</button></div>
+          <div class="selected-count"><span id="selectedCount">0 of 6 selected.</span></div>
+          <div class="patch-grid">
+            <button id="patchCard" class="patch-card" draggable="true"><img src="patch-chai-bhar.png" alt="Chai Bhar"><span>Chai Bhar</span><i>✓</i></button>
+          </div>
+          <div class="drag-note">Drag the patch onto the shirt, or click it to add.</div>
+          <button class="primary wide" data-go="review">Continue →</button>
+        </aside>
+      </div>
+    </section>
+
+    <section id="review" class="screen flow-screen">
+      <div class="stepper" data-step="4"></div>
+      <div class="review-wrap">
+        <div class="review-left">
+          <div class="step-label">04 / REVIEW</div>
+          <h1>Review your design.</h1>
+          <p>A final look before you add it to bag.</p>
+          <div class="review-stage">
+            <img src="tshirt-ivory.png" class="review-shirt" alt="Final shirt">
+            <img id="reviewPatch" src="patch-chai-bhar.png" class="review-patch hidden" alt="Selected patch">
+            <button class="edit-placement" data-go="patches">✎ Edit placement</button>
+          </div>
+        </div>
+        <aside class="review-card">
+          <div class="review-row"><div><small>Selected city</small><strong id="reviewCity"></strong><span>Places. People. Stories.</span></div><button data-go="city">Change</button></div>
+          <div class="review-row"><div><small>T-shirt</small><strong>Unisex Fit</strong><span id="reviewShirtMeta"></span></div><div><button data-go="shirt">Change</button><button id="openSize2" class="text-link">Size guide</button></div></div>
+          <div class="review-row patches-summary"><div><small>Selected patches (<b id="reviewCount">0</b>)</small><div id="reviewPatchList"></div></div><button data-go="patches">Change</button></div>
+          <div class="delivery">▣ <div><strong>Estimated delivery</strong><span>5–7 business days</span></div></div>
+          <div class="price"><h3>Price breakdown</h3><div><span>T-shirt (Unisex Fit)</span><b>₹ 1,399</b></div><div><span>Patch set</span><b id="patchPrice">₹ 0</b></div><div><span>Customization</span><b>₹ 0</b></div><div><span>Shipping</span><b>₹ 99</b></div><hr><div class="total"><span>Total</span><b id="totalPrice">₹ 1,498</b></div></div>
+          <button id="addBag" class="primary wide">Add to Bag →</button>
+          <button class="secondary wide">♡ Save Design</button>
+        </aside>
+      </div>
+      <div class="benefits"><div>☁<span><b>Premium Cotton</b>240 GSM, breathable and soft.</span></div><div>♙<span><b>Unisex Fit</b>Designed for everyday wear.</span></div><div>◌<span><b>Made for high-quality print</b>Vibrant, long-lasting finish.</span></div><div>□<span><b>Free size exchange</b>Hassle-free within 7 days.</span></div></div>
+    </section>
+  </main>
+
+  <div id="sizeModal" class="modal" aria-hidden="true">
+    <div class="modal-card"><button id="closeSize" class="modal-close">×</button><div class="step-label">SIZE GUIDE</div><h2>Unisex fit measurements</h2><p>Use the garment measurements from your production supplier before launch. These are placeholders for testing.</p>
+      <div class="table-wrap"><table><thead><tr><th>Size</th><th>Chest</th><th>Length</th><th>Shoulder</th></tr></thead><tbody><tr><td>XS</td><td>—</td><td>—</td><td>—</td></tr><tr><td>S</td><td>—</td><td>—</td><td>—</td></tr><tr><td>M</td><td>—</td><td>—</td><td>—</td></tr><tr><td>L</td><td>—</td><td>—</td><td>—</td></tr><tr><td>XL</td><td>—</td><td>—</td><td>—</td></tr><tr><td>XXL</td><td>—</td><td>—</td><td>—</td></tr></tbody></table></div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
