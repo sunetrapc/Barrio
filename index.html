@@ -66,7 +66,7 @@
       <div class="step-kicker">02 / T-SHIRT</div>
       <h1>Choose your base.</h1>
       <p>A premium canvas for your city story. Timeless, versatile and made to be uniquely yours.</p>
-      <div class="shirt-stage"><img src="tshirt-ivory.png" alt="Premium unisex T-shirt"></div>
+      <div class="shirt-stage"><img src="tshirt-ivory.jpg" alt="Premium unisex T-shirt"></div>
     </div>
     <aside class="shirt-right">
       <label>Selected city</label>
@@ -93,7 +93,8 @@
       <h1>Choose your patches.</h1>
       <p>Drag onto the T-shirt. Select up to 6.</p>
       <div id="dropZone" class="dropzone">
-        <img src="tshirt-ivory.png" class="tee" alt="T-shirt canvas"/>
+        <div class="print-zone" aria-hidden="true"></div>
+        <img src="tshirt-ivory.jpg" class="tee" alt="T-shirt canvas"/>
         <img id="placedPatch" src="patch-chai-bhar.png" class="placed hidden" alt="Chai Bhar patch"/>
         <div id="patchControls" class="patch-tools floating hidden"><button id="smaller">−</button><button id="bigger">＋</button><button id="removePatch">⌫</button></div>
       </div>
@@ -102,8 +103,9 @@
       <div class="select-row"><div><label>Selected city</label><button id="patchCity" class="select-flat"></button></div><div><label>Mix another city</label><button class="select-flat">Add a city ⌄</button></div></div>
       <div class="chips"><button class="active">All</button><button>Food</button><button>Streets</button><button>Culture</button><button>Nature</button><button>Everyday</button></div>
       <div id="selectedCount" class="counter">0 of 6 selected.</div>
-      <div class="patch-grid"><button id="patchTile" class="patch-tile" draggable="true"><img src="patch-chai-bhar.png"><span>Chai Bhar</span><i>✓</i></button></div>
-      <div class="hint">Drag the patch onto the shirt, or click to add.</div>
+      <div class="library-head"><div><strong>Patch library</strong><span>Testing with one patch for now</span></div><span class="counter-pill" id="selectedCountTop">0 / 6</span></div>
+      <div class="patch-grid"><button id="patchTile" class="patch-tile" draggable="true"><span class="patch-art"><img src="patch-chai-bhar.png"></span><span class="patch-name">Chai Bhar</span><small>Food & drink</small><i>✓</i></button></div>
+      <div class="hint-card"><strong>Place it your way</strong><span>Drag the patch onto the shirt, or click to add. Once placed, move and resize it directly on the garment.</span></div>
       <button class="btn dark full" data-go="review">Continue →</button>
     </aside>
   </div>
@@ -114,7 +116,7 @@
   <div class="review-layout">
     <div class="review-left">
       <div class="step-kicker">04 / REVIEW</div><h1>Review your design.</h1><p>A final look before you add it to bag.</p>
-      <div class="review-stage"><img src="tshirt-ivory.png" class="review-tee"><img id="reviewPatch" src="patch-chai-bhar.png" class="review-patch hidden"><button class="edit-btn" data-go="patches">✎ Edit placement</button></div>
+      <div class="review-stage"><img src="tshirt-ivory.jpg" class="review-tee"><img id="reviewPatch" src="patch-chai-bhar.png" class="review-patch hidden"><button class="edit-btn" data-go="patches">✎ Edit placement</button></div>
     </div>
     <aside class="review-card">
       <div class="review-row"><div><small>Selected city</small><strong id="reviewCity"></strong><span>Places. People. Stories.</span></div><button data-go="city">Change</button></div>
